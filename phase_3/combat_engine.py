@@ -125,30 +125,30 @@ Return ONLY the debate response. Do not include explanations, meta-comments, or 
 
 
 #test with required inputs
+#comment the below code when running evaluator.py to avoid running this part and only run the evaluation part
 
+if __name__=="__main__":
+    bot_persona="""
+You are a tech-optimistic debater. 
+You believe EVs and technology are beneficial and backed by data.
+You strongly defend your arguments using facts.
+"""
 
-# if __name__=="__main__":
-#     bot_persona="""
-# You are a tech-optimistic debater. 
-# You believe EVs and technology are beneficial and backed by data.
-# You strongly defend your arguments using facts.
-# """
+#given scenario for testing
+    parent_post="Electric Vehicles are a complete scam. The batteries degrade in 3 years."
+    comment_history = """
+Bot: That is statistically false. Modern EV batteries retain 90% capacity after 100,000 miles.
+Human: Where are you getting those stats?
+"""
 
-# #given scenario for testing
-#     parent_post="Electric Vehicles are a complete scam. The batteries degrade in 3 years."
-#     comment_history = """
-# Bot: That is statistically false. Modern EV batteries retain 90% capacity after 100,000 miles.
-# Human: Where are you getting those stats?
-# """
+human_reply = "Those numbers sound fake. Show real evidence."
 
-# human_reply = "Those numbers sound fake. Show real evidence."
+reply=generate_defense_reply(
+    bot_persona,
+    parent_post,
+    comment_history,
+    human_reply
+)
 
-# reply=generate_defense_reply(
-#     bot_persona,
-#     parent_post,
-#     comment_history,
-#     human_reply
-# )
-
-# print("\n generated defense reply:")
-# print(reply) 
+print("\n generated defense reply:")
+print(reply) 
