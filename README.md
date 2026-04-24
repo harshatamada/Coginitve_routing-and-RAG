@@ -1,5 +1,25 @@
 # Cognitive Routing and RAG System
 
+# How to Run
+
+### 1. Setup Environment
+pip install -r requirements.txt
+Create a .env file and add your Groq API key:
+GROQ_API_KEY=your_api_key_here
+
+## Run Phase 1 (Persona Routing)
+python phase_1/persona_router.py
+
+## Run Phase 2 (Content Generation)
+python phase_2/run.py
+
+## Run Phase 3 (Defense Engine)
+python phase_3/combat_engine.py
+
+## Run Phase 3 Evaluation (Injection Test)
+python phase_3/evaluator.py
+
+
 ## Phase 2 – LangGraph Workflow
 
 In this phase, I built a small pipeline where each bot can generate its own post instead of just reacting.
